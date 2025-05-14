@@ -1,45 +1,59 @@
 from llama_cpp import Llama
-import pyautogui
-import os
-import keyboard
-from . import screen_text_extractor  # Update import statement
+import json
+from datetime import datetime
 
 class LLMProcessor:
     def __init__(self, model_path):
         try:
             self.model = Llama(
                 model_path=model_path,
-                n_ctx=2048,  # Context window
-                n_threads=4   # Adjust based on your CPU
+                n_ctx=4096,
+                n_threads=6,
+                n_gpu_layers=1
             )
-            self.context_history = []
+            self.conversation_history = []
         except Exception as e:
             raise Exception(f"Failed to load model: {str(e)}")
 
     def process_query(self, query):
-        """Process the user query and return structured command"""
-        system_prompt = """
-        You are an AI assistant that helps control computer operations.
-        Convert user requests into structured commands.
-        Use format: 'action: [command], params: [parameters]'
-        Available actions: open, close, search, click, type, scroll
+        system_prompt = """You are JARVIS, an AI assistant. Your responses should be natural and helpful.
+        For tasks, respond in JSON format with 'type' and other relevant fields.
+        For conversations, be engaging and natural.
+        
+        Examples:
+        - "open chrome" -> {"type": "command", "action": "open", "parameters": {"name": "chrome"}}
+        - "hello" -> {"type": "conversation", "response": "Hello! How can I help you today?"}
+        - "what's the weather" -> {"type": "conversation", "response": "I'd be happy to check the weather for you."}
         """
-        
-        full_prompt = f"{system_prompt}\n\nUser: {query}\nAssistant:"
-        
-        response = self.model(
-            full_prompt,
-            max_tokens=100,
-            temperature=0.7,
-            stop=["User:", "\n\n"]
-        )
-        
-        return response['choices'][0]['text'].strip()
 
-    def extract_screen_text(self, region=None):
-        """Extract text from current screen"""
-        return screen_text_extractor.extract_text(region)
+        context = "\n".join(self.conversation_history[-3:])
+        full_prompt = f"{system_prompt}\n\nPrevious context:\n{context}\n\nUser: {query}\nAssistant:"
 
-    def get_screen_elements(self):
-        """Get clickable elements on screen"""
-        return screen_text_extractor.get_clickable_elements()
+        try:
+            response = self.model(
+                full_prompt,
+                max_tokens=256,
+                temperature=0.7,
+                stop=["User:", "\n\n"]
+            )
+
+            result = response['choices'][0]['text'].strip()
+            
+            # Try to parse as JSON for commands
+            try:
+                parsed = json.loads(result)
+                if isinstance(parsed, dict) and 'type' in parsed:
+                    self.conversation_history.append(f"User: {query}\nAssistant: {result}")
+                    return result
+            except json.JSONDecodeError:
+                # If not JSON, treat as conversation
+                return json.dumps({
+                    "type": "conversation",
+                    "response": result
+                })
+
+        except Exception as e:
+            return json.dumps({
+                "type": "conversation",
+                "response": "I apologize, but I encountered an error processing that request."
+            })

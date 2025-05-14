@@ -3,24 +3,30 @@ import pyttsx3
 class VoiceSynthesizer:
     def __init__(self):
         self.engine = pyttsx3.init()
-        # Configure voice properties
-        self.engine.setProperty('rate', 180)    # Speed of speech
-        self.engine.setProperty('volume', 1.0)  # Volume (0.0 to 1.0)
+        self._configure_voice()
         
-        # voice (0 female or 1 male)
+    def _configure_voice(self):
+        """Configure voice properties for natural speech"""
         voices = self.engine.getProperty('voices')
+        # Select a more natural voice - adjust index based on available voices
+        self.engine.setProperty('voice', voices[1].id)  # Usually index 1 is a better voice
+        self.engine.setProperty('rate', 175)  # Slightly slower for clarity
+        self.engine.setProperty('volume', 0.9)  # Slightly lower volume
         
-        # If we have more voices
-        #self.engine.setProperty('voice', voices[n].id) # n is the index of the voice
-
-
-        self.engine.setProperty('voice', voices[0].id)
-
     def speak(self, text):
-        """Convert text to speech"""
         try:
-            print(f"Assistant: {text}")
-            self.engine.say(text)
+            # Add speech marks for more natural pauses
+            processed_text = self._process_text_for_speech(text)
+            self.engine.say(processed_text)
             self.engine.runAndWait()
         except Exception as e:
-            print(f"Error in speech synthesis: {str(e)}")
+            print(f"Speech synthesis error: {str(e)}")
+
+    def _process_text_for_speech(self, text):
+        """Add processing for more natural speech patterns"""
+        # Add pauses at punctuation
+        text = text.replace(',', ', ')
+        text = text.replace('.', '. ')
+        text = text.replace('!', '! ')
+        text = text.replace('?', '? ')
+        return text

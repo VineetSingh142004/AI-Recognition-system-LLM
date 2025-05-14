@@ -3,9 +3,13 @@
 import pyautogui
 import os
 import webbrowser
-from datetime import datetime
+import json
+import psutil
 import keyboard
-from .screen_text_extractor import extract_text  # Update relative import
+from datetime import datetime
+import win32gui
+import win32con
+import subprocess
 
 class EnhancedCommandProcessor:
     def __init__(self, llm_processor):
@@ -14,90 +18,63 @@ class EnhancedCommandProcessor:
             'open': self._open_application,
             'close': self._close_application,
             'search': self._search,
-            'click': self._click_element,
             'type': self._type_text,
+            'click': self._click_element,
             'scroll': self._scroll,
-            'select': self._select,
-            'file': self._file_operations
+            'minimize': self._minimize_window,
+            'maximize': self._maximize_window,
+            'switch': self._switch_window
+        }
+        
+        # Common applications paths
+        self.app_paths = {
+            'chrome': r'C:\Program Files\Google\Chrome\Application\chrome.exe',
+            'notepad': 'notepad.exe',
+            'calculator': 'calc.exe',
+            'word': r'C:\Program Files\Microsoft Office\root\Office16\WINWORD.EXE',
+            'excel': r'C:\Program Files\Microsoft Office\root\Office16\EXCEL.EXE'
         }
 
     def process_command(self, command_text):
-        """Process natural language commands using LLM"""
-        # First, let LLM understand the intent
-        llm_response = self.llm.process_query(command_text)
-        
-        # Extract action and parameters
-        action, params = self._parse_llm_response(llm_response)
-        
-        if action in self.commands:
-            return self.commands[action](params)
-        else:
-            # Handle as general conversation
-            return llm_response
-
-    def _parse_llm_response(self, response):
-        """
-        Parse the LLM response to extract action and parameters
-        Example response format: "action: open, params: {"name": "chrome"}"
-        """
         try:
-            # Default values
-            action = "unknown"
-            params = {}
+            # Get LLM response
+            llm_response = self.llm.process_query(command_text)
+            response_data = json.loads(llm_response)
             
-            if not response:
-                return action, params
-
-            # Simple parsing based on common keywords
-            response = response.lower()
+            if response_data['type'] == 'conversation':
+                return response_data['response']
             
-            # Check for actions
-            if "open" in response:
-                action = "open"
-                # Extract application name
-                params["name"] = response.split("open")[-1].strip()
-            elif "close" in response:
-                action = "close"
-                params["name"] = response.split("close")[-1].strip()
-            elif "search" in response:
-                action = "search"
-                query = response.split("search")[-1].strip()
-                params["query"] = query
-                params["location"] = "web" if "web" in response else "local"
-            elif "click" in response:
-                action = "click"
-                params["target"] = response.split("click")[-1].strip()
-            elif "type" in response:
-                action = "type"
-                params["text"] = response.split("type")[-1].strip()
-            elif "scroll" in response:
-                action = "scroll"
-                params["direction"] = "down" if "down" in response else "up"
-                params["amount"] = 1
+            elif response_data['type'] == 'command':
+                action = response_data.get('action')
+                if action in self.commands:
+                    success = self.commands[action](response_data.get('parameters', {}))
+                    if success:
+                        return f"I've completed the {action} command successfully."
+                    return f"I had trouble with the {action} command. Please try again."
+                return f"I understand you want me to {action}, but I'm not sure how to do that yet."
             
-            return action, params
+            return "I'm not sure how to help with that. Could you try rephrasing?"
+            
+        except json.JSONDecodeError:
+            print(f"Debug - Invalid JSON: {llm_response}")
+            return "I had trouble understanding that. Could you rephrase it?"
         except Exception as e:
-            print(f"Error parsing LLM response: {str(e)}")
-            return "unknown", {}
+            print(f"Debug - Error: {str(e)}")
+            return "I encountered an error processing your request."
 
     def _open_application(self, params):
-        """Open an application or URL"""
+        app_name = params.get('name', '').lower()
+        
         try:
-            app_name = params.get('name', '').lower()
-            if 'chrome' in app_name or 'browser' in app_name:
-                webbrowser.open('https://google.com')
-                return f"Opened {app_name}"
-            elif 'notepad' in app_name:
-                os.system('notepad.exe')
-                return f"Opened {app_name}"
+            if app_name in self.app_paths:
+                subprocess.Popen(self.app_paths[app_name])
+            elif app_name.endswith('.exe'):
+                subprocess.Popen(app_name)
             else:
-                try:
-                    os.startfile(app_name)
-                    return f"Opened {app_name}"
-                except:
-                    return f"Could not open {app_name}"
+                os.system(f"start {app_name}")
+            return True
         except Exception as e:
-            return f"Error opening application: {str(e)}"
+            return False
 
     def _close_application(self, params):
         """Close an application"""
@@ -160,46 +137,32 @@ class EnhancedCommandProcessor:
         except Exception as e:
             return f"Scroll failed: {str(e)}"
 
-    def _select(self, params):
-        """Select text or elements"""
+    def _minimize_window(self, params):
+        """Minimize the current window"""
         try:
-            target = params.get('target', '')
-            elements = self.llm.get_screen_elements()
-            
-            if target in elements:
-                pyautogui.click(elements[target])
-                pyautogui.dragTo(elements[target][0] + 100, elements[target][1], duration=0.2)
-                return f"Selected {target}"
-            return "Element not found"
+            hwnd = win32gui.GetForegroundWindow()
+            win32gui.ShowWindow(hwnd, win32con.SW_MINIMIZE)
+            return "Window minimized"
         except Exception as e:
-            return f"Selection failed: {str(e)}"
+            return f"Failed to minimize window: {str(e)}"
 
-    def _file_operations(self, params):
-        """Handle file operations (open, save, delete, etc.)"""
-        operation = params.get('operation')
-        path = params.get('path')
-        
-        if operation == 'find':
-            return self._find_file(path)
-        elif operation == 'open':
-            return self._open_file(path)
-        # Add more file operations
-
-    def _find_file(self, path):
-        """Find a file in the specified path"""
+    def _maximize_window(self, params):
+        """Maximize the current window"""
         try:
-            for root, dirs, files in os.walk(path):
-                for file in files:
-                    if file.lower() == path.lower():
-                        return os.path.join(root, file)
-            return "File not found"
+            hwnd = win32gui.GetForegroundWindow()
+            win32gui.ShowWindow(hwnd, win32con.SW_MAXIMIZE)
+            return "Window maximized"
         except Exception as e:
-            return f"File search failed: {str(e)}"
+            return f"Failed to maximize window: {str(e)}"
 
-    def _open_file(self, path):
-        """Open a file"""
+    def _switch_window(self, params):
+        """Switch to another window"""
         try:
-            os.startfile(path)
-            return f"Opened file: {path}"
+            window_name = params.get('name', '')
+            hwnd = win32gui.FindWindow(None, window_name)
+            if hwnd:
+                win32gui.SetForegroundWindow(hwnd)
+                return f"Switched to window: {window_name}"
+            return "Window not found"
         except Exception as e:
-            return f"Failed to open file: {str(e)}"
+            return f"Failed to switch window: {str(e)}"
