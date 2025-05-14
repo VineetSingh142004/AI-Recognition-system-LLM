@@ -1,0 +1,164 @@
+[
+  {
+    "timestamp": "2025-05-13T21:04:23.842647",
+    "command": "i said hello how are you",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:11:40.230192",
+    "command": "open chrome",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:12:51.045521",
+    "command": "open notepad",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:13:58.898352",
+    "command": "close chrome",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:15:06.901915",
+    "command": "minimize notepad",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:16:15.717829",
+    "command": "maximize calculator",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:18:01.863766",
+    "command": "open chrome and go to google.com",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:19:11.465802",
+    "command": "search for python and open the first link",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:20:20.847886",
+    "command": "create folder Projects and open it",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:21:29.714363",
+    "command": "minimize all windows except chrome",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:22:38.123547",
+    "command": "save this file and close notepad",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:24:22.422990",
+    "command": "",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:25:30.070565",
+    "command": "nonexistent_command",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:26:38.528458",
+    "command": "open nonexistent_app",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:27:46.781235",
+    "command": "delete system32",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:28:54.755611",
+    "command": "12345",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:30:41.988798",
+    "command": "create file test.txt",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:31:50.543048",
+    "command": "open document.pdf",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:32:58.738576",
+    "command": "delete test.txt",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:34:06.117662",
+    "command": "rename file old.txt to new.txt",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:35:14.410423",
+    "command": "move file.txt to Documents",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:37:03.786200",
+    "command": "hello",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:37:35.217967",
+    "command": "hello",
+    "response": "test response",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:37:35.217967",
+    "command": "open chrome",
+    "response": "test response",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:37:35.217967",
+    "command": "invalid_command",
+    "response": "test response",
+    "success": false
+  },
+  {
+    "timestamp": "2025-05-13T21:37:35.217967",
+    "command": "search python",
+    "response": "test response",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-13T21:37:35.217967",
+    "command": "close window",
+    "response": "test response",
+    "success": true
+  }
+]
