@@ -1,105 +1,59 @@
 from llama_cpp import Llama
 import json
-from datetime import datetime
-import pyautogui
-import psutil
-import os
 
 class LLMProcessor:
     def __init__(self, model_path):
         try:
+            # Optimize model settings for faster inference
             self.model = Llama(
                 model_path=model_path,
-                n_ctx=4096,
-                n_threads=6,
-                n_gpu_layers=1
+                n_ctx=512,          # Reduced context window
+                n_threads=4,        # Optimal thread count
+                n_batch=8,          # Smaller batch size
+                n_gpu_layers=1,     # Enable minimal GPU acceleration
+                seed=42,
+                verbose=False
             )
-            self.conversation_history = []
-            self.command_types = {
-                "open": ["open", "launch", "start", "run"],
-                "close": ["close", "exit", "quit", "terminate"],
-                "search": ["search", "find", "look for"],
-                "system": ["shutdown", "restart", "sleep", "lock"],
-                "browser": ["browse", "go to", "visit", "website"],
-                "type": ["type", "write", "input"],
-                "click": ["click", "select", "choose"],
-                "file": ["create file", "delete file", "rename file", "move file"],
-                "folder": ["create folder", "delete folder", "open folder"],
-                "media": ["play", "pause", "stop", "volume", "mute"],
-                "window": ["minimize", "maximize", "restore", "switch to"]
+            # Pre-cache common responses
+            self.quick_responses = {
+                "hello": {"type": "conversation", "response": "Hello! How can I help?"},
+                "hi": {"type": "conversation", "response": "Hi there!"},
+                "bye": {"type": "conversation", "response": "Goodbye!"},
             }
         except Exception as e:
-            raise Exception(f"Failed to load model: {str(e)}")
+            raise Exception(f"Model initialization failed: {str(e)}")
 
     def process_query(self, query):
-        system_prompt = """You are JARVIS, an advanced AI assistant. Analyze user input and respond in JSON format.
-        Available command types:
-        - System commands (shutdown, restart, etc.)
-        - Application control (open, close, minimize, etc.)
-        - File operations (create, delete, move, etc.)
-        - Web browsing (search, navigate, etc.)
-        - Text input and mouse control
-        - Media control (play, pause, volume, etc.)
-        
-        Response format:
-        {
-            "type": "command/conversation",
-            "action": "command_name",
-            "parameters": {
-                "param1": "value1",
-                ...
-            },
-            "response": "natural language response"
-        }"""
+        # Quick response for common phrases
+        lower_query = query.lower()
+        if lower_query in self.quick_responses:
+            return json.dumps(self.quick_responses[lower_query])
 
-        context = "\n".join(self.conversation_history[-3:])
-        current_time = datetime.now().strftime("%I:%M %p")
-        
-        full_prompt = f"""{system_prompt}
+        # Pattern matching for common commands
+        if "open" in lower_query:
+            app = lower_query.replace("open", "").strip()
+            return json.dumps({
+                "type": "command",
+                "action": "open",
+                "parameters": {"name": app}
+            })
 
-Previous context:
-{context}
-
-Current time: {current_time}
-Current running apps: {', '.join([p.name() for p in psutil.process_iter(['name'])])}
-
-User query: {query}
-Assistant: Let me help you with that.
-
-Provide response in JSON format:"""
-
+        # Use LLM only for complex queries
         try:
             response = self.model(
-                full_prompt,
-                max_tokens=512,
+                query,
+                max_tokens=64,      # Reduced token limit
                 temperature=0.7,
-                stop=["User:", "\n\n"]
+                stop=["User:", "\n"],
+                echo=False
             )
-            
-            result = response['choices'][0]['text'].strip()
-            
-            # Validate and enhance the response
-            try:
-                parsed = json.loads(result)
-                if isinstance(parsed, dict):
-                    if 'type' not in parsed:
-                        parsed['type'] = 'conversation'
-                    if 'response' not in parsed:
-                        parsed['response'] = "I understand your request."
-                    
-                    self.conversation_history.append(f"User: {query}\nAssistant: {parsed['response']}")
-                    return json.dumps(parsed)
-                
-            except json.JSONDecodeError:
-                # Fallback for non-JSON responses
-                return json.dumps({
-                    "type": "conversation",
-                    "response": result
-                })
-
-        except Exception as e:
-            print(f"LLM Processing error: {str(e)}")
             return json.dumps({
                 "type": "conversation",
-                "response": "I encountered an error processing your request."
+                "response": response['choices'][0]['text'].strip()
+            })
+        except Exception as e:
+            print(f"LLM Error: {e}")
+            return json.dumps({
+                "type": "conversation",
+                "response": "I encountered an error. Please try again."
             })

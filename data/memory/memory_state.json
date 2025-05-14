@@ -1,0 +1,668 @@
+{
+  "interactions": [
+    {
+      "command": "open",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:25:29.382076",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open Chrome",
+      "response": "I couldn't complete that action",
+      "success": true,
+      "timestamp": "2025-05-14T04:25:36.756197",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "work profile",
+      "response": "",
+      "success": true,
+      "timestamp": "2025-05-14T04:25:44.666668",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "c.",
+      "response": "|x|, the function is not monotonic in the entire domain R, so there does not exist a unique maximum value.",
+      "success": true,
+      "timestamp": "2025-05-14T04:26:01.471975",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "what",
+      "response": "is the best way to handle the 404 error in Laravel?",
+      "success": false,
+      "timestamp": "2025-05-14T04:26:15.699039",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open Chrome and select work profile",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:26:27.564866",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "why",
+      "response": "it is not possible to use 1256851200000 as the value for an int64 in javascript",
+      "success": true,
+      "timestamp": "2025-05-14T04:26:44.070761",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open Garcia",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:27:24.506680",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open cursor",
+      "response": "I couldn't complete that action",
+      "success": true,
+      "timestamp": "2025-05-14T04:27:32.613674",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open WhatsApp",
+      "response": "I couldn't complete that action",
+      "success": true,
+      "timestamp": "2025-05-14T04:27:40.079314",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "oh wait on him here",
+      "response": "and go to the next question",
+      "success": true,
+      "timestamp": "2025-05-14T04:27:50.017751",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open WhatsApp and call ujjwal",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:28:07.081093",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open File Explorer",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:28:21.070180",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open my computers",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:28:30.510548",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open GitHub",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:28:38.160594",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "let me come",
+      "response": "in the chat",
+      "success": true,
+      "timestamp": "2025-05-14T04:28:50.890362",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open wordpad",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:29:01.385947",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open Notepad",
+      "response": "I couldn't complete that action",
+      "success": true,
+      "timestamp": "2025-05-14T04:29:08.693527",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "type my name is vineet Singh",
+      "response": "",
+      "success": true,
+      "timestamp": "2025-05-14T04:29:18.072908",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "oh",
+      "response": "ne",
+      "success": true,
+      "timestamp": "2025-05-14T04:29:27.713061",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open notepad and type my name",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:29:36.046364",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "and",
+      "response": "351,556 were excluded as duplicates, 315,380 were excluded due to age < 18 years, 151,162 were excluded due to pregnancy, and 118,727 were excluded due to missing covariates (Fig.",
+      "success": true,
+      "timestamp": "2025-05-14T04:30:17.144881",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open notepad and write my name is vineet Singh and I am from Knox College",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:30:48.411337",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "search my",
+      "response": "computer for files, but the only files i can select is to search for documents, pictures, music, videos etc.I want to search for a file with a specific name and extension, but i dont know if i have to use the search bar in windows and type in the name and extension or if i have to",
+      "success": true,
+      "timestamp": "2025-05-14T04:31:14.624711",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "search",
+      "response": "_terms = [\"GDP\", \"GNP\", \"GMP\", \"GNI\", \"GDP per capita\"]",
+      "success": true,
+      "timestamp": "2025-05-14T04:31:42.013464",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "up",
+      "response": "grades = [",
+      "success": true,
+      "timestamp": "2025-05-14T04:31:59.727841",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "what we're",
+      "response": "going to do in this video is we're going to look at a couple of different ways to add some additional data to your",
+      "success": true,
+      "timestamp": "2025-05-14T04:32:11.893357",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "search business 302",
+      "response": "0",
+      "success": true,
+      "timestamp": "2025-05-14T04:32:24.907888",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "search bus 302 dot PDF",
+      "response": "7.21.80 1040790 20150828142112 518256 18008000 00100000 0110000",
+      "success": true,
+      "timestamp": "2025-05-14T04:32:50.164410",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    },
+    {
+      "command": "open search bar",
+      "response": "Command executed successfully",
+      "success": true,
+      "timestamp": "2025-05-14T04:33:16.444399",
+      "context": {
+        "time": "2025-05-14T04:33:12.286612",
+        "active_app": null,
+        "previous_commands": [
+          "up",
+          "what we're",
+          "search business 302",
+          "search bus 302 dot PDF",
+          "open search bar"
+        ],
+        "conversation_topic": "system",
+        "user_intent": "action",
+        "system_state": {}
+      }
+    }
+  ],
+  "patterns": {
+    "open": 1,
+    "open chrome": 1,
+    "work profile": 1,
+    "c.": 1,
+    "what": 1,
+    "open chrome and select work profile": 1,
+    "why": 1,
+    "open garcia": 1,
+    "open cursor": 1,
+    "open whatsapp": 1,
+    "oh wait on him here": 1,
+    "open whatsapp and call ujjwal": 1,
+    "open file explorer": 1,
+    "open my computers": 1,
+    "open github": 1,
+    "let me come": 1,
+    "open wordpad": 1,
+    "open notepad": 1,
+    "type my name is vineet singh": 1,
+    "oh": 1,
+    "open notepad and type my name": 1,
+    "and": 1,
+    "open notepad and write my name is vineet singh and i am from knox college": 1,
+    "search my": 1,
+    "search": 1,
+    "up": 1,
+    "what we're": 1,
+    "search business 302": 1,
+    "search bus 302 dot pdf": 1,
+    "open search bar": 1
+  },
+  "successful_patterns": {
+    "open": 1,
+    "open chrome": 1,
+    "work profile": 1,
+    "c.": 1,
+    "open chrome and select work profile": 1,
+    "why": 1,
+    "open garcia": 1,
+    "open cursor": 1,
+    "open whatsapp": 1,
+    "oh wait on him here": 1,
+    "open whatsapp and call ujjwal": 1,
+    "open file explorer": 1,
+    "open my computers": 1,
+    "open github": 1,
+    "let me come": 1,
+    "open wordpad": 1,
+    "open notepad": 1,
+    "type my name is vineet singh": 1,
+    "oh": 1,
+    "open notepad and type my name": 1,
+    "and": 1,
+    "open notepad and write my name is vineet singh and i am from knox college": 1,
+    "search my": 1,
+    "search": 1,
+    "up": 1,
+    "what we're": 1,
+    "search business 302": 1,
+    "search bus 302 dot pdf": 1,
+    "open search bar": 1
+  },
+  "last_updated": "2025-05-14T04:33:16.444399"
+}

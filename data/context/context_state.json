@@ -1,0 +1,159 @@
+{
+  "current_context": {
+    "time": "2025-05-14T04:34:13.458533",
+    "active_app": null,
+    "previous_commands": [
+      "what does Woodrow Wilson do",
+      "I said what does ujjwal Singh do",
+      "what does ujjwal Singh do",
+      "what does ujjwal Singh from Knox College Study",
+      "Avalon"
+    ],
+    "conversation_topic": "browser",
+    "user_intent": "query",
+    "system_state": {}
+  },
+  "history": [
+    {
+      "time": "2025-05-14T04:32:06.074421",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:32:24.157690",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:32:35.931681",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:33:12.286612",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "system",
+      "user_intent": "action",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:33:26.066065",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "action",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:33:40.339857",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:33:50.102156",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:33:59.013739",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:34:08.780149",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    },
+    {
+      "time": "2025-05-14T04:34:13.458533",
+      "active_app": null,
+      "previous_commands": [
+        "what does Woodrow Wilson do",
+        "I said what does ujjwal Singh do",
+        "what does ujjwal Singh do",
+        "what does ujjwal Singh from Knox College Study",
+        "Avalon"
+      ],
+      "conversation_topic": "browser",
+      "user_intent": "query",
+      "system_state": {}
+    }
+  ],
+  "last_updated": "2025-05-14T04:34:13.458533"
+}

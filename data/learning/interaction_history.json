@@ -160,5 +160,29 @@
     "command": "close window",
     "response": "test response",
     "success": true
+  },
+  {
+    "timestamp": "2025-05-14T03:24:20.318002",
+    "command": "oh",
+    "response": "Let me help you with that.",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-14T03:25:45.288572",
+    "command": "but",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-14T03:27:09.781531",
+    "command": "open Google Chrome",
+    "response": "",
+    "success": true
+  },
+  {
+    "timestamp": "2025-05-14T03:35:55.787625",
+    "command": "can you please open Brave browser",
+    "response": "I understand your request.",
+    "success": true
   }
 ]
